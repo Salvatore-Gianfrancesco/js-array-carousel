@@ -10,6 +10,6 @@ img {
     display: none;
 }
 
-img.active{
+img.active {
     display: block;
 }
