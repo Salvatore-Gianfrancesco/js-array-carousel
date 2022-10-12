@@ -18,6 +18,7 @@ for (let i = 1; i < slideList.length; i++) {
 
 let activeSlide = 0;
 let currentSlide = document.querySelector(".active");
+let currentThumb = document.querySelector(".active_thumb");
 
 const nextSlide = document.querySelector("button:first-of-type")
     .addEventListener("click", function () {
@@ -28,8 +29,12 @@ const nextSlide = document.querySelector("button:first-of-type")
             activeSlide--;
         }
         currentSlide.classList.remove("active");
-        currentSlide = document.querySelector(`img:nth-child(${activeSlide + 1})`);
+        currentSlide = document.querySelector(`.slides img:nth-child(${activeSlide + 1})`);
         currentSlide.classList.add("active");
+
+        currentThumb.classList.remove("active_thumb");
+        currentThumb = document.querySelector(`.thumbs img:nth-child(${activeSlide + 1})`);
+        currentThumb.classList.add("active_thumb");
     })
 
 const prevSlide = document.querySelector("button:last-of-type")
@@ -43,4 +48,8 @@ const prevSlide = document.querySelector("button:last-of-type")
         currentSlide.classList.remove("active");
         currentSlide = document.querySelector(`img:nth-child(${activeSlide + 1})`);
         currentSlide.classList.add("active");
+
+        currentThumb.classList.remove("active_thumb");
+        currentThumb = document.querySelector(`.thumbs img:nth-child(${activeSlide + 1})`);
+        currentThumb.classList.add("active_thumb");
     })

@@ -4,15 +4,51 @@
     box-sizing: border-box;
 }
 
+.container {
+    height: 800px;
+}
+
 .slides {
-    height: 500px;
+    height: 75vh;
 }
 
 img {
     max-width: 100%;
+    object-fit: cover;
+}
+
+.slides img {
     display: none;
+    width: 100%;
 }
 
 img.active {
     display: block;
+}
+
+.thumbs img {
+    height: calc(100% / 5);
+    width: 100%;
+    opacity: 50%;
+}
+
+img.active_thumb {
+    opacity: 100%;
+}
+
+button {
+    position: absolute;
+    opacity: 70%;
+}
+
+.prev_img {
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.next_img {
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
