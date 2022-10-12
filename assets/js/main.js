@@ -21,19 +21,26 @@ let currentSlide = document.querySelector(".active");
 
 const nextSlide = document.querySelector("button:first-of-type")
     .addEventListener("click", function () {
-        console.log("prev");
+        // console.log("prev");
+        if (activeSlide === 0) {
+            activeSlide = slideList.length - 1;
+        } else {
+            activeSlide--;
+        }
         currentSlide.classList.remove("active");
-        activeSlide--;
         currentSlide = document.querySelector(`img:nth-child(${activeSlide + 1})`);
         currentSlide.classList.add("active");
     })
 
 const prevSlide = document.querySelector("button:last-of-type")
     .addEventListener("click", function () {
-        console.log("next");
+        // console.log("next");
+        if (activeSlide === slideList.length - 1) {
+            activeSlide = 0;
+        } else {
+            activeSlide++;
+        }
         currentSlide.classList.remove("active");
-        activeSlide++;
-        console.log(activeSlide);
         currentSlide = document.querySelector(`img:nth-child(${activeSlide + 1})`);
         currentSlide.classList.add("active");
     })
