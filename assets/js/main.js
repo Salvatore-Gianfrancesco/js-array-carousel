@@ -17,23 +17,23 @@ for (let i = 1; i < slideList.length; i++) {
 }
 
 let activeSlide = 0;
+let currentSlide = document.querySelector(".active");
 
 const nextSlide = document.querySelector("button:first-of-type")
     .addEventListener("click", function () {
         console.log("prev");
-        let currentSlide = document.querySelector(".active");
         currentSlide.classList.remove("active");
         activeSlide--;
-        currentSlide = document.querySelector(`img:nth-child(${activeSlide})`);
+        currentSlide = document.querySelector(`img:nth-child(${activeSlide + 1})`);
         currentSlide.classList.add("active");
     })
 
 const prevSlide = document.querySelector("button:last-of-type")
     .addEventListener("click", function () {
         console.log("next");
-        let currentSlide = document.querySelector(".active");
         currentSlide.classList.remove("active");
         activeSlide++;
-        currentSlide = document.querySelector(`img:nth-child(${activeSlide})`);
+        console.log(activeSlide);
+        currentSlide = document.querySelector(`img:nth-child(${activeSlide + 1})`);
         currentSlide.classList.add("active");
     })
